@@ -43,7 +43,6 @@ namespace WinDEPT
             // activation de l'onglet "Liste departements"
             tbcPrincipal.SelectedTab = tbpListe;
         }
-
         private void tbcPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
                         
@@ -78,6 +77,10 @@ namespace WinDEPT
             // affichage des informations du département
             txtInfoNumero.Text = deptSelect.GetNumero();
             txtInfoNom.Text = deptSelect.GetNom();
+            txtInfoSup.Text = deptSelect.GetSuperficie().ToString();
+            txtInfoPop.Text = deptSelect.GetPopulation().ToString();
+            txtInfoDens.Text = deptSelect.CalculerDensite().ToString();
+            txtInfoRegion.Text = deptSelect.GetRegion();
         }
 
         /// <summary>
