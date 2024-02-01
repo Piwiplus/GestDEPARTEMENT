@@ -24,7 +24,6 @@ namespace WinDEPT
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Click sur le bouton VALIDER","EVENEMENT");
             // récupération des valeurs saisies dans les zones de texte
             string numDept = txtNumero.Text;
             string nomDept = txtNom.Text;
@@ -47,12 +46,10 @@ namespace WinDEPT
 
         private void tbcPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Sélection d'un onglet", "EVENEMENT");
                         
             // si l'onglet "LISTE DEPARTEMENTS" est sélectionné
             if (tbcPrincipal.SelectedTab == tbpListe)
             {
-                MessageBox.Show("Onglet LISTE DEPARTEMENTS", "ONGLET SELECTIONNE");
                 
                 // appel à la méthode ChargerListDept
                 ChargerListDept();
@@ -60,13 +57,17 @@ namespace WinDEPT
             // si l'onglet "NOUVEAU" est sélectionné
             else
             {
-                MessageBox.Show("Onglet NOUVEAU", "ONGLET SELECTIONNE");
+                txtNumero.Focus();
+                txtNom.Clear();
+                txtNumero.Clear();
+                txtPopulation.Clear();
+                txtRegion.Clear();
+                txtSuperficie.Clear();
             }
         }
 
         private void listDept_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Sélection d'un élément dans la liste", "EVENEMENT");
             
             // récupération de l'index de l'item sélectionné dans la listbox (base 0)
             int indexSelect = listDept.SelectedIndex;
