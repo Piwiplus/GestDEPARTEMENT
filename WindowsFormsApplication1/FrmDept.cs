@@ -91,7 +91,7 @@ namespace WinDEPT
             // parcours du tableau lesDepartements
             for (int i = 0; i <= nbDepartements - 1; i++)
             {
-                string item = lesDepartements[i].GetNom();
+                string item = lesDepartements[i].GetNumero() + "-"+ lesDepartements[i].GetNom().ToUpper() ;
                 // ajout d'un item dans la listBox
                 listDept.Items.Add(item);
             }
