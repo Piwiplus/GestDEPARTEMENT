@@ -16,7 +16,6 @@ namespace WinDEPT
         // déclaration du tableau lesDepartements
         Departement[] lesDepartements = new Departement[95];
         int nbDepartements = 0; // nombre de départements crées
-
         public FrmDept()
         {
             InitializeComponent();
@@ -33,7 +32,7 @@ namespace WinDEPT
             
             // création d'un département (instanciation d'un objet de la classe Departement)
             Departement d = new Departement(numDept, nomDept, supDept, popDept, regDept);
-            
+
             // ajout du département crée dans le tableau lesDepartements
             lesDepartements[nbDepartements] = d;
             
@@ -81,6 +80,7 @@ namespace WinDEPT
             txtInfoPop.Text = deptSelect.GetPopulation().ToString();
             txtInfoDens.Text = deptSelect.CalculerDensite().ToString();
             txtInfoRegion.Text = deptSelect.GetRegion();
+            
         }
 
         /// <summary>
@@ -91,6 +91,9 @@ namespace WinDEPT
             // suppression des éléments (items) de la listbox
             listDept.Items.Clear();
 
+            //affichage du nombre de departement sur l'app
+            txtNbDept.Text = nbDepartements.ToString() + " Departement en mémoire";
+            
             // parcours du tableau lesDepartements
             for (int i = 0; i <= nbDepartements - 1; i++)
             {
@@ -98,6 +101,16 @@ namespace WinDEPT
                 // ajout d'un item dans la listBox
                 listDept.Items.Add(item);
             }
+        }
+
+        private void FrmDept_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
