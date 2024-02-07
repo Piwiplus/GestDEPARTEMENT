@@ -43,10 +43,7 @@ namespace WinDEPT
             // activation de l'onglet "Liste departements"
             tbcPrincipal.SelectedTab = tbpListe;
             listDept.SelectedIndex = 0;
-            if (txtRegion == "Auvergne Rhêne Alpes")
-            {
-
-            }
+            
         }
         private void tbcPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -84,6 +81,38 @@ namespace WinDEPT
             txtInfoPop.Text = deptSelect.GetPopulation().ToString();
             txtInfoDens.Text = deptSelect.CalculerDensite().ToString();
             txtInfoRegion.Text= deptSelect.GetRegion();
+            String Region = txtInfoRegion.Text;
+            if (Region == "Auvergne Rhône Alpes")
+            {
+                txtInfoChef.Text = "Lyon";
+
+            }
+            else
+            {
+                if (Region == "Bretagne")
+                {
+                    txtInfoChef.Text = "Rennes";
+                }
+                else
+                {
+                    if (Region == "Grand Est")
+                    {
+                        txtInfoChef.Text = "Strasbourg";
+                    }
+                    else
+                    {
+                        if (Region == "Nouvelle-Aquitaine")
+                        {
+                            txtInfoChef.Text = "Bordeaux";
+                        }
+                        else
+                        {
+                            txtInfoChef.Text = "Toulouse";
+                        }
+                    }
+                }
+            }
+
         }
 
         /// <summary>
@@ -122,6 +151,16 @@ namespace WinDEPT
         }
 
         private void tbpCreation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
         {
 
         }

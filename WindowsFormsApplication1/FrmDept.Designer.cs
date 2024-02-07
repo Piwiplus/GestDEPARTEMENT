@@ -44,6 +44,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.listDept = new System.Windows.Forms.ListBox();
             this.tbpCreation = new System.Windows.Forms.TabPage();
+            this.txtRegion = new System.Windows.Forms.ComboBox();
             this.btnValider = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,7 +57,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtRegion = new System.Windows.Forms.ComboBox();
+            this.txtInfoChef = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tbcPrincipal.SuspendLayout();
             this.tbpListe.SuspendLayout();
             this.gbInfos.SuspendLayout();
@@ -102,6 +105,9 @@
             // 
             // gbInfos
             // 
+            this.gbInfos.Controls.Add(this.label13);
+            this.gbInfos.Controls.Add(this.label12);
+            this.gbInfos.Controls.Add(this.txtInfoChef);
             this.gbInfos.Controls.Add(this.label11);
             this.gbInfos.Controls.Add(this.label10);
             this.gbInfos.Controls.Add(this.label9);
@@ -116,7 +122,7 @@
             this.gbInfos.Margin = new System.Windows.Forms.Padding(4);
             this.gbInfos.Name = "gbInfos";
             this.gbInfos.Padding = new System.Windows.Forms.Padding(4);
-            this.gbInfos.Size = new System.Drawing.Size(308, 220);
+            this.gbInfos.Size = new System.Drawing.Size(308, 260);
             this.gbInfos.TabIndex = 2;
             this.gbInfos.TabStop = false;
             this.gbInfos.Text = "Informations";
@@ -162,11 +168,11 @@
             // 
             // txtInfoRegion
             // 
-            this.txtInfoRegion.Location = new System.Drawing.Point(8, 185);
+            this.txtInfoRegion.Location = new System.Drawing.Point(81, 222);
             this.txtInfoRegion.Margin = new System.Windows.Forms.Padding(4);
             this.txtInfoRegion.Name = "txtInfoRegion";
             this.txtInfoRegion.ReadOnly = true;
-            this.txtInfoRegion.Size = new System.Drawing.Size(291, 26);
+            this.txtInfoRegion.Size = new System.Drawing.Size(191, 26);
             this.txtInfoRegion.TabIndex = 4;
             // 
             // txtInfoPop
@@ -252,6 +258,22 @@
             this.tbpCreation.Text = "NOUVEAU DEPARTEMENT";
             this.tbpCreation.UseVisualStyleBackColor = true;
             this.tbpCreation.Click += new System.EventHandler(this.tbpCreation_Click);
+            // 
+            // txtRegion
+            // 
+            this.txtRegion.AccessibleRole = System.Windows.Forms.AccessibleRole.DropList;
+            this.txtRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtRegion.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtRegion.Items.AddRange(new object[] {
+            "Auvergne Rhône Alpes",
+            "Bretagne",
+            "Grand Est",
+            "Nouvelle-Aquitaine",
+            "Occitanie"});
+            this.txtRegion.Location = new System.Drawing.Point(128, 234);
+            this.txtRegion.Name = "txtRegion";
+            this.txtRegion.Size = new System.Drawing.Size(188, 24);
+            this.txtRegion.TabIndex = 13;
             // 
             // btnValider
             // 
@@ -378,18 +400,36 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Numéro";
             // 
-            // txtRegion
+            // txtInfoChef
             // 
-            this.txtRegion.Items.AddRange(new object[] {
-            "Auvergne Rhône Alpes",
-            "Bretagne",
-            "Grand Est",
-            "Nouvelle-Aquitaine",
-            "Occitanie"});
-            this.txtRegion.Location = new System.Drawing.Point(128, 234);
-            this.txtRegion.Name = "txtRegion";
-            this.txtRegion.Size = new System.Drawing.Size(121, 24);
-            this.txtRegion.TabIndex = 13;
+            this.txtInfoChef.Location = new System.Drawing.Point(148, 188);
+            this.txtInfoChef.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInfoChef.Name = "txtInfoChef";
+            this.txtInfoChef.ReadOnly = true;
+            this.txtInfoChef.Size = new System.Drawing.Size(124, 26);
+            this.txtInfoChef.TabIndex = 9;
+            this.txtInfoChef.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 191);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 20);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Chef Lieu";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(14, 225);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 20);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Region";
             // 
             // FrmDept
             // 
@@ -441,7 +481,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtInfoSup;
         private System.Windows.Forms.Label txtNbDept;
-        private System.Windows.Forms.ComboBox txtRegion;
+        private System.Windows.Forms.TextBox txtInfoChef;
+        public System.Windows.Forms.ComboBox txtRegion;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
 
