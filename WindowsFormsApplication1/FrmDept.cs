@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassDepartement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinDEPT
 {
@@ -35,16 +37,20 @@ namespace WinDEPT
 
             // ajout du département crée dans le tableau lesDepartements
             lesDepartements[nbDepartements] = d;
-            
             // incrémentation du nombre de départements crées
             nbDepartements++;
             
             // activation de l'onglet "Liste departements"
             tbcPrincipal.SelectedTab = tbpListe;
+            listDept.SelectedIndex = 0;
+            if (txtRegion == "Auvergne Rhêne Alpes")
+            {
+
+            }
         }
         private void tbcPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
-                        
+            
             // si l'onglet "LISTE DEPARTEMENTS" est sélectionné
             if (tbcPrincipal.SelectedTab == tbpListe)
             {
@@ -59,7 +65,6 @@ namespace WinDEPT
                 txtNom.Clear();
                 txtNumero.Clear();
                 txtPopulation.Clear();
-                txtRegion.Clear();
                 txtSuperficie.Clear();
             }
         }
@@ -69,7 +74,6 @@ namespace WinDEPT
             
             // récupération de l'index de l'item sélectionné dans la listbox (base 0)
             int indexSelect = listDept.SelectedIndex;
-            
             // obtention de l'objet Departement correspondant dans le tableau lesDepartements
             Departement deptSelect = lesDepartements[indexSelect];
             
@@ -79,8 +83,7 @@ namespace WinDEPT
             txtInfoSup.Text = deptSelect.GetSuperficie().ToString();
             txtInfoPop.Text = deptSelect.GetPopulation().ToString();
             txtInfoDens.Text = deptSelect.CalculerDensite().ToString();
-            txtInfoRegion.Text = deptSelect.GetRegion();
-            
+            txtInfoRegion.Text= deptSelect.GetRegion();
         }
 
         /// <summary>
@@ -103,12 +106,22 @@ namespace WinDEPT
             }
         }
 
-        private void FrmDept_Load(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRegion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbpCreation_Click(object sender, EventArgs e)
         {
 
         }

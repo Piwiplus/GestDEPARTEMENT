@@ -30,6 +30,7 @@
         {
             this.tbcPrincipal = new System.Windows.Forms.TabControl();
             this.tbpListe = new System.Windows.Forms.TabPage();
+            this.txtNbDept = new System.Windows.Forms.Label();
             this.gbInfos = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.btnValider = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtRegion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSuperficie = new System.Windows.Forms.TextBox();
             this.txtPopulation = new System.Windows.Forms.TextBox();
@@ -56,7 +56,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNbDept = new System.Windows.Forms.Label();
+            this.txtRegion = new System.Windows.Forms.ComboBox();
             this.tbcPrincipal.SuspendLayout();
             this.tbpListe.SuspendLayout();
             this.gbInfos.SuspendLayout();
@@ -90,6 +90,15 @@
             this.tbpListe.TabIndex = 0;
             this.tbpListe.Text = "LISTE DEPARTEMENTS";
             this.tbpListe.UseVisualStyleBackColor = true;
+            // 
+            // txtNbDept
+            // 
+            this.txtNbDept.AutoSize = true;
+            this.txtNbDept.Location = new System.Drawing.Point(28, 309);
+            this.txtNbDept.Name = "txtNbDept";
+            this.txtNbDept.Size = new System.Drawing.Size(169, 16);
+            this.txtNbDept.TabIndex = 3;
+            this.txtNbDept.Text = "0 Departement en mémoire";
             // 
             // gbInfos
             // 
@@ -221,10 +230,10 @@
             // 
             // tbpCreation
             // 
+            this.tbpCreation.Controls.Add(this.txtRegion);
             this.tbpCreation.Controls.Add(this.btnValider);
             this.tbpCreation.Controls.Add(this.label7);
             this.tbpCreation.Controls.Add(this.label6);
-            this.tbpCreation.Controls.Add(this.txtRegion);
             this.tbpCreation.Controls.Add(this.label5);
             this.tbpCreation.Controls.Add(this.txtSuperficie);
             this.tbpCreation.Controls.Add(this.txtPopulation);
@@ -242,6 +251,7 @@
             this.tbpCreation.TabIndex = 1;
             this.tbpCreation.Text = "NOUVEAU DEPARTEMENT";
             this.tbpCreation.UseVisualStyleBackColor = true;
+            this.tbpCreation.Click += new System.EventHandler(this.tbpCreation_Click);
             // 
             // btnValider
             // 
@@ -276,15 +286,6 @@
             this.label6.Size = new System.Drawing.Size(148, 18);
             this.label6.TabIndex = 10;
             this.label6.Text = "en milliers d\'habitants";
-            // 
-            // txtRegion
-            // 
-            this.txtRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegion.Location = new System.Drawing.Point(124, 238);
-            this.txtRegion.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRegion.Name = "txtRegion";
-            this.txtRegion.Size = new System.Drawing.Size(324, 24);
-            this.txtRegion.TabIndex = 9;
             // 
             // label5
             // 
@@ -377,15 +378,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Numéro";
             // 
-            // txtNbDept
+            // txtRegion
             // 
-            this.txtNbDept.AutoSize = true;
-            this.txtNbDept.Location = new System.Drawing.Point(28, 309);
-            this.txtNbDept.Name = "txtNbDept";
-            this.txtNbDept.Size = new System.Drawing.Size(169, 16);
-            this.txtNbDept.TabIndex = 3;
-            this.txtNbDept.Text = "0 Departement en mémoire";
-            this.txtNbDept.Click += new System.EventHandler(this.label12_Click);
+            this.txtRegion.Items.AddRange(new object[] {
+            "Auvergne Rhône Alpes",
+            "Bretagne",
+            "Grand Est",
+            "Nouvelle-Aquitaine",
+            "Occitanie"});
+            this.txtRegion.Location = new System.Drawing.Point(128, 234);
+            this.txtRegion.Name = "txtRegion";
+            this.txtRegion.Size = new System.Drawing.Size(121, 24);
+            this.txtRegion.TabIndex = 13;
             // 
             // FrmDept
             // 
@@ -396,7 +400,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDept";
             this.Text = "APPLICATION WinDEPT";
-            this.Load += new System.EventHandler(this.FrmDept_Load);
             this.tbcPrincipal.ResumeLayout(false);
             this.tbpListe.ResumeLayout(false);
             this.tbpListe.PerformLayout();
@@ -416,7 +419,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtRegion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSuperficie;
         private System.Windows.Forms.TextBox txtPopulation;
@@ -439,6 +441,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtInfoSup;
         private System.Windows.Forms.Label txtNbDept;
+        private System.Windows.Forms.ComboBox txtRegion;
     }
 }
 
