@@ -17,6 +17,7 @@ namespace ClassDepartement
         private double superficie;  // en km2
         private double population;  // en milliers d'habitants
         private string region;
+        private string chef;
         #endregion
 
         #region constructeur
@@ -28,13 +29,14 @@ namespace ClassDepartement
         /// <param name="uneSuperficie">superficie du département en km2</param>
         /// <param name="unePopulation">population du département en milliers d'habitants</param>
         /// <param name="uneRegion">région du département</param>
-        public Departement(string unNumero, string unNom, double uneSuperficie, double unePopulation, string uneRegion)
+        public Departement(string unNumero, string unNom, double uneSuperficie, double unePopulation, string uneRegion, string unChef)
         {
             this.numero = unNumero;
             this.nom = unNom;
             this.superficie = uneSuperficie;
             this.population = unePopulation;
             this.region = uneRegion;
+            this.chef = unChef;
         }
         #endregion
         
@@ -44,7 +46,7 @@ namespace ClassDepartement
         /// </summary>
         public void Afficher()
         {
-            Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", this.numero, this.nom, this.superficie, this.population, this.region);
+            Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", this.numero, this.nom, this.superficie, this.population, this.region, this.chef);
         }
 
         /// <summary>
@@ -73,6 +75,14 @@ namespace ClassDepartement
         public string GetNom()
         {
             return this.nom;
+        }
+        /// <summary>
+        /// Retourne le chef lieu du département
+        /// </summary>
+        /// <returns></returns>
+        public string GetChef()
+        {
+            return this.chef;
         }
         /// <summary>
         /// Retourne le nom de la région du département
@@ -123,6 +133,14 @@ namespace ClassDepartement
         {
             this.population = unePopulation;
         } 
+        /// <summary>
+        /// Modifie le chef lieu du département
+        /// </summary>
+        /// <param name="unChef">Chef lieu de chaque département</param>
+        public void SetChefLieu(string unChef)
+        {
+            this.chef = unChef;
+        }
         #endregion
 
     }

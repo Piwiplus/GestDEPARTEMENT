@@ -31,9 +31,10 @@ namespace WinDEPT
             double popDept = double.Parse(txtPopulation.Text);
             double supDept = double.Parse(txtSuperficie.Text);
             string regDept = txtRegion.Text;
+            string chefDept = txtChef.Text;
             
             // création d'un département (instanciation d'un objet de la classe Departement)
-            Departement d = new Departement(numDept, nomDept, supDept, popDept, regDept);
+            Departement d = new Departement(numDept, nomDept, supDept, popDept, regDept,chefDept);
 
             // ajout du département crée dans le tableau lesDepartements
             lesDepartements[nbDepartements] = d;
@@ -63,6 +64,7 @@ namespace WinDEPT
                 txtNumero.Clear();
                 txtPopulation.Clear();
                 txtSuperficie.Clear();
+                txtChef.Clear();
             }
         }
 
@@ -81,8 +83,9 @@ namespace WinDEPT
             txtInfoPop.Text = deptSelect.GetPopulation().ToString();
             txtInfoDens.Text = deptSelect.CalculerDensite().ToString();
             txtInfoRegion.Text= deptSelect.GetRegion();
+            txtInfoChef.Text = deptSelect.GetChef();
             String Region = txtInfoRegion.Text;
-            if (Region == "Auvergne Rhône Alpes")
+            /*if (Region == "Auvergne Rhône Alpes")
             {
                 txtInfoChef.Text = "Lyon";
 
@@ -111,7 +114,7 @@ namespace WinDEPT
                         }
                     }
                 }
-            }
+            }*/
 
         }
 
